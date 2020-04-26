@@ -152,6 +152,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-I-O详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/">Java I/O详解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-26T03:18:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流?"></a>什么是IO流?</h3><p>IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。</p>
+<p>文件可认为是相关记录或放在一起的数据的集合 </p>
+<h4 id="file类的常用方法"><a href="#file类的常用方法" class="headerlink" title="file类的常用方法"></a>file类的常用方法</h4><p>​        方法名称          说   明 </p>
+<p>​        boolean exists( )       判断文件或目录是否存在</p>
+<p>​        boolean isFile( )       判断是否是文件</p>
+<p>​        boolean isDirectory( )    判断是否是目录 </p>
+<p>​        String getPath( )       返回此对象表示的文件的相对路径名 </p>
+<p>​        String getAbsolutePath( )   返回此对象表示的文件的绝对路径名</p>
+<p>​        String getName( )      返回此对象表示的文件或目录的名称</p>
+<p>​        boolean delete( )      删除此对象指定的文件或目录 </p>
+<p>​        boolean createNewFile( )   创建名称的空文件，不创建文件夹</p>
+<p>​        long  length()       返回文件的长度，单位为字节, 如果文 件不存在，则返回 0L </p>
+<h3 id="Java的流"><a href="#Java的流" class="headerlink" title="Java的流"></a>Java的流</h3><p>​        流是指一连串流动的字符，是以先进先出的方式发送和接受数据的通道</p>
+<p>​        输入流：InputStream 只能从中读取数据，而不能向其中写入数据</p>
+<p>​        输出流：OutputStream只能向其中写入数据，而不能向其中读取数据</p>
+<p>​        按照流向区分：</p>
+<p>​            输入流：InputStream和Reader作为基类</p>
+<p>​            输出流：OutputStream和Writer作为基类</p>
+<p>​        按照处理数据单元划分：</p>
+<p>​            字节流：字节输入流InputStream基类</p>
+<p>​            字节输出流OutputStream基类</p>
+<p>​        字符流：字符输入流Reader基类</p>
+<p>​        字符输出流Writer基类</p>
+<h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>文本文件的读写：</p>
+<pre><code>用FileInputStream和FileOutputStream读写文本 文件 </code></pre><p>​            用BufferedReader和BufferedWriter读写文本文 件</p>
+<p>二进制文件的读写：</p>
+<p>​            使用DataInputStream和DataOutputStream读写 二进制文件</p>
+<h3 id="InputStream常用方法"><a href="#InputStream常用方法" class="headerlink" title="InputStream常用方法"></a>InputStream常用方法</h3><p>​         int read( )   int read(byte[] b)  int read(byte[] b,int off,int len) uvoid close( )   int available()  子类    FileInputStream</p>
+<h3 id="常用的构造方法"><a href="#常用的构造方法" class="headerlink" title="常用的构造方法"></a>常用的构造方法</h3><pre><code>FileInputStream(File file)    FileInputStream(String name)</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​        前两种构造方法在向文件写数据时将覆盖文件中原有的内容 </p>
+<p>2、创建FileOutputStream实例时，如果相应的文件并不存在， 则会自动创建一个空的文件</p>
+<h3 id="BufferedReader类特有的方法"><a href="#BufferedReader类特有的方法" class="headerlink" title="BufferedReader类特有的方法"></a>BufferedReader类特有的方法</h3><p>​        BufferedReader类是Reader类的子类 BufferedReader类带有缓冲区 按行读取内容的readLine()方法</p>
+<p><img src="img/io.png" alt="io"></p>
+<p>这个是IO流关系图，可以方便大家更好的理解IO流</p>
+<h3 id="读取二进制文件"><a href="#读取二进制文件" class="headerlink" title="读取二进制文件"></a>读取二进制文件</h3><p>​        DataInputStream类</p>
+<p>​         FileInputStream的子类 </p>
+<p>​        与FileInputStream类结合使用读取二进制文件 </p>
+<p>​         DataOutputStream类</p>
+<p>​         FileOutputStream的子类 </p>
+<p>​        与FileOutputStream类结合使用写二进制文件</p>
+<h3 id="使用文件流的步骤"><a href="#使用文件流的步骤" class="headerlink" title="使用文件流的步骤"></a>使用文件流的步骤</h3><p>引入相关的类</p>
+<p>创建输入流/l输出流对象</p>
+<p> 读取/写入文本文件的数据</p>
+<p>关闭相关的流对象</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何快速的学习一门语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -467,7 +572,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">本人叫做程瑞祥，QQ为1351333957&lt;br&gt;&lt;br&gt;写这个博客主要还是让大家能够跟我一起学习，一起进步&lt;br&gt;欢迎加入Java学习群1081931475一起交流，谢谢大家</div>
   	  	
     	</section>
     
