@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java I/O详解 | Hexo</title>
+  <title>Spring Boot注解大全 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是IO流?IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。 文件可认为是相关记录或放在一起的数据的集合  file类的常用方法​        方法名称          说   明  ​        boolean exists( )       判断文件或目录是否存在 ​        boolean isFile( )       判断是否是文件 ​">
+  <meta name="description" content="一、注解(annotations)列表 @SpringBootApplication： 包含了@ComponentScan、@Configuration和@EnableAutoConfiguration注解。 其中@ComponentScan让spring Boot扫描到Configuration类并把它加入到程序上下文。 @Configuration 等同于spring的XML配置文件；使用Ja">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java I&#x2F;O详解">
-<meta property="og:url" content="http://yoursite.com/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:title" content="Spring Boot注解大全">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/Spring-Boot%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是IO流?IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。 文件可认为是相关记录或放在一起的数据的集合  file类的常用方法​        方法名称          说   明  ​        boolean exists( )       判断文件或目录是否存在 ​        boolean isFile( )       判断是否是文件 ​">
+<meta property="og:description" content="一、注解(annotations)列表 @SpringBootApplication： 包含了@ComponentScan、@Configuration和@EnableAutoConfiguration注解。 其中@ComponentScan让spring Boot扫描到Configuration类并把它加入到程序上下文。 @Configuration 等同于spring的XML配置文件；使用Ja">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/img/io.png">
-<meta property="article:published_time" content="2020-04-26T03:18:06.000Z">
-<meta property="article:modified_time" content="2020-04-26T03:44:19.556Z">
+<meta property="article:published_time" content="2020-04-29T08:08:52.000Z">
+<meta property="article:modified_time" content="2020-04-29T08:14:55.036Z">
 <meta property="article:author" content="code J·T">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/img/io.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,69 +154,100 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-I-O详解" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spring-Boot注解大全" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java I/O详解
+      Spring Boot注解大全
     </h1>
   
 
         
-        <a href="/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-04-26T03:18:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
+        <a href="/2020/04/29/Spring-Boot%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/" class="archive-article-date">
+  	<time datetime="2020-04-29T08:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流?"></a>什么是IO流?</h3><p>IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。</p>
-<p>文件可认为是相关记录或放在一起的数据的集合 </p>
-<h4 id="file类的常用方法"><a href="#file类的常用方法" class="headerlink" title="file类的常用方法"></a>file类的常用方法</h4><p>​        方法名称          说   明 </p>
-<p>​        boolean exists( )       判断文件或目录是否存在</p>
-<p>​        boolean isFile( )       判断是否是文件</p>
-<p>​        boolean isDirectory( )    判断是否是目录 </p>
-<p>​        String getPath( )       返回此对象表示的文件的相对路径名 </p>
-<p>​        String getAbsolutePath( )   返回此对象表示的文件的绝对路径名</p>
-<p>​        String getName( )      返回此对象表示的文件或目录的名称</p>
-<p>​        boolean delete( )      删除此对象指定的文件或目录 </p>
-<p>​        boolean createNewFile( )   创建名称的空文件，不创建文件夹</p>
-<p>​        long  length()       返回文件的长度，单位为字节, 如果文 件不存在，则返回 0L </p>
-<h3 id="Java的流"><a href="#Java的流" class="headerlink" title="Java的流"></a>Java的流</h3><p>​        流是指一连串流动的字符，是以先进先出的方式发送和接受数据的通道</p>
-<p>​        输入流：InputStream 只能从中读取数据，而不能向其中写入数据</p>
-<p>​        输出流：OutputStream只能向其中写入数据，而不能向其中读取数据</p>
-<p>​        按照流向区分：</p>
-<p>​            输入流：InputStream和Reader作为基类</p>
-<p>​            输出流：OutputStream和Writer作为基类</p>
-<p>​        按照处理数据单元划分：</p>
-<p>​            字节流：字节输入流InputStream基类</p>
-<p>​            字节输出流OutputStream基类</p>
-<p>​        字符流：字符输入流Reader基类</p>
-<p>​        字符输出流Writer基类</p>
-<h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>文本文件的读写：</p>
-<pre><code>用FileInputStream和FileOutputStream读写文本 文件 </code></pre><p>​            用BufferedReader和BufferedWriter读写文本文 件</p>
-<p>二进制文件的读写：</p>
-<p>​            使用DataInputStream和DataOutputStream读写 二进制文件</p>
-<h3 id="InputStream常用方法"><a href="#InputStream常用方法" class="headerlink" title="InputStream常用方法"></a>InputStream常用方法</h3><p>​         int read( )   int read(byte[] b)  int read(byte[] b,int off,int len) uvoid close( )   int available()  子类    FileInputStream</p>
-<h3 id="常用的构造方法"><a href="#常用的构造方法" class="headerlink" title="常用的构造方法"></a>常用的构造方法</h3><pre><code>FileInputStream(File file)    FileInputStream(String name)</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​        前两种构造方法在向文件写数据时将覆盖文件中原有的内容 </p>
-<p>2、创建FileOutputStream实例时，如果相应的文件并不存在， 则会自动创建一个空的文件</p>
-<h3 id="BufferedReader类特有的方法"><a href="#BufferedReader类特有的方法" class="headerlink" title="BufferedReader类特有的方法"></a>BufferedReader类特有的方法</h3><p>​        BufferedReader类是Reader类的子类 BufferedReader类带有缓冲区 按行读取内容的readLine()方法</p>
-<p><img src="img/io.png" alt="io"></p>
-<p>这个是IO流关系图，可以方便大家更好的理解IO流</p>
-<h3 id="读取二进制文件"><a href="#读取二进制文件" class="headerlink" title="读取二进制文件"></a>读取二进制文件</h3><p>​        DataInputStream类</p>
-<p>​         FileInputStream的子类 </p>
-<p>​        与FileInputStream类结合使用读取二进制文件 </p>
-<p>​         DataOutputStream类</p>
-<p>​         FileOutputStream的子类 </p>
-<p>​        与FileOutputStream类结合使用写二进制文件</p>
-<h3 id="使用文件流的步骤"><a href="#使用文件流的步骤" class="headerlink" title="使用文件流的步骤"></a>使用文件流的步骤</h3><p>引入相关的类</p>
-<p>创建输入流/l输出流对象</p>
-<p> 读取/写入文本文件的数据</p>
-<p>关闭相关的流对象</p>
+        <p><strong>一、注解(annotations)列表</strong></p>
+<p><strong>@SpringBootApplication</strong>：</p>
+<p>包含了@ComponentScan、@Configuration和@EnableAutoConfiguration注解。</p>
+<p>其中@ComponentScan让spring Boot扫描到Configuration类并把它加入到程序上下文。</p>
+<p><strong>@Configuration</strong> 等同于spring的XML配置文件；使用Java代码可以检查类型安全。</p>
+<p><strong>@EnableAutoConfiguration</strong> 自动配置。</p>
+<p><strong>@ComponentScan</strong> 组件扫描，可自动发现和装配一些Bean。</p>
+<p><strong>@Component</strong>可配合CommandLineRunner使用，在程序启动后执行一些基础任务。</p>
+<p><strong>@RestController</strong>注解是@Controller和@ResponseBody的合集,表示这是个控制器bean,并且是将函数的返回值直 接填入HTTP响应体中,是REST风格的控制器。</p>
+<p><strong>@Autowired</strong>自动导入。</p>
+<p><strong>@PathVariable</strong>获取参数。</p>
+<p><strong>@JsonBackReference</strong>解决嵌套外链问题。</p>
+<p><strong>@RepositoryRestResourcepublic</strong>配合spring-boot-starter-data-rest使用。</p>
+<h1 id="二、注解-annotations-详解"><a href="#二、注解-annotations-详解" class="headerlink" title="二、注解(annotations)详解"></a>二、注解(annotations)详解</h1><p><strong>@SpringBootApplication</strong>：申明让spring boot自动给程序进行必要的配置，这个配置等同于：@Configuration ，@EnableAutoConfiguration 和 @ComponentScan 三个配置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.myproject;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span> <span class="comment">// same as @Configuration @EnableAutoConfiguration @ComponentScan</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@ResponseBoby</strong>:表示该方法的返回结果直接写入到页面body当中，一般一部获取数据时使用、用于构建restful的api。</p>
+<p>在使用@RequestMapping后，返回值通常解析为跳转路径，加上@responsebody后返回结果不会被解析为跳转路径，而是直接写入HTTP response body中。</p>
+<p>比如异步获取json数据，加上@responsebody后，会直接返回json数据。</p>
+<p>该注解一般会配合@RequestMapping一起使用。示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(“/hello”)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>”hello”;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Controller</strong>：用于定义控制器类，在spring 项目中由控制器负责将用户发来的URL请求转发到对应的服务接口（service层）</p>
+<p>一般这个注解在类中，通常方法需要配合注解@RequestMapping。</p>
+<p>示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(“/cont”)</span><br><span class="line">publicclass ControllerTest &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DemoInfoService demoInfoService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"DemoController.hello()"</span>);</span><br><span class="line">        map.put(<span class="string">"hello"</span>,<span class="string">"from TemplateController.helloHtml"</span>);</span><br><span class="line">        <span class="comment">//会使用hello.html或者hello.ftl模板进行渲染显示.</span></span><br><span class="line">        <span class="keyword">return</span><span class="string">"/hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@RestController</strong>：用于标注控制层组件(如struts中的action)，@ResponseBody和@Controller的合集。</p>
+<p>示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kfit.demo.web;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(“/demoInfo2”)</span><br><span class="line">publicclass DemoController2 &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span><span class="string">"ok"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@RequestMapping</strong>：提供路由信息，负责URL到Controller中的具体函数的映射。</p>
+<p><strong>@EnableAutoConfiguration</strong>：Spring Boot自动配置（auto-configuration）：尝试根据你添加的jar依赖自动配置你的Spring应用。</p>
+<p>例如，如果你的classpath下存在HSQLDB，并且你没有手动配置任何数据库连接beans，那么我们将自动配置一个内存型（in-memory）数据库”。</p>
+<p>你可以将@EnableAutoConfiguration或者@SpringBootApplication注解添加到一个@Configuration类上来选择自动配置。</p>
+<p>如果发现应用了你不想要的特定自动配置类，你可以使用@EnableAutoConfiguration注解的排除属性来禁用它们。</p>
+<p><strong>@ComponentScan</strong>：表示将该类自动发现扫描组件。</p>
+<p>个人理解相当于，如果扫描到有@Component、@Controller、@Service等这些注解的类，并注册为Bean，可以自动收集所有的Spring组件，包括@Configuration类。</p>
+<p>我们经常使用@ComponentScan注解搜索beans，并结合@Autowired注解导入。可以自动收集所有的Spring组件，包括@Configuration类。</p>
+<p>如果没有配置的话，Spring Boot会扫描启动类所在包下以及子包下的使用了@Service,@Repository等注解的类。</p>
+<p><strong>@Configuration</strong>：相当于传统的xml配置文件，如果有些第三方库需要用到xml文件，建议仍然通过@Configuration类作为项目的配置主类——可以使用@ImportResource注解加载xml配置文件。</p>
+<p><strong>@Import</strong>：用来导入其他配置类。</p>
+<p><strong>@ImportResource</strong>：用来加载xml配置文件。</p>
+<p><strong>@Autowired</strong>：自动导入依赖的bean</p>
+<p><strong>@Service</strong>：一般用于修饰service层的组件</p>
+<p><strong>@Repository</strong>：使用@Repository注解可以确保DAO或者repositories提供异常转译，这个注解修饰的DAO或者repositories类会被ComponetScan发现并配置，同时也不需要为它们提供XML配置项。</p>
+<p><strong>@Bean</strong>：用@Bean标注方法等价于XML中配置的bean。</p>
+<p><strong>@Value</strong>：注入Spring boot application.properties配置的属性的值。示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Value(value = “#&#123;message&#125;”)</span><br><span class="line"><span class="keyword">private</span> String message;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Inject</strong>：等价于默认的@Autowired，只是没有required属性；</p>
+<p><strong>@Component</strong>：泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。</p>
+<p><strong>@Bean</strong>：相当于XML中的,放在方法的上面，而不是类，意思是产生一个bean,并交给spring管理。</p>
+<p><strong>@AutoWired</strong>：自动导入依赖的bean。byType方式。把配置好的Bean拿来用，完成属性、方法的组装，它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作。当加上（required=false）时，就算找不到bean也不报错。</p>
+<p><strong>@Qualifier</strong>：当有多个同一类型的Bean时，可以用@Qualifier(“name”)来指定。与@Autowired配合使用。@Qualifier限定描述符除了能根据名字进行注入，但能进行更细粒度的控制如何选择候选者，具体使用方式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(value = “demoInfoService”)</span><br><span class="line"><span class="keyword">private</span> DemoInfoService demoInfoService;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Resource</strong>(name=”name”,type=”type”)：没有括号内内容的话，默认byName。与@Autowired干类似的事。</p>
+<h1 id="三、springMVC相关注解"><a href="#三、springMVC相关注解" class="headerlink" title="三、springMVC相关注解"></a>三、springMVC相关注解</h1><p><strong>@RequestMapping</strong>：@RequestMapping(“/path”)表示该控制器处理所有“/path”的UR L请求。</p>
+<p>RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。</p>
+<p>用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。该注解有六个属性：</p>
+<p><strong>params</strong>:指定request中必须包含某些参数值是，才让该方法处理。</p>
+<p><strong>headers</strong>:指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
+<p><strong>value</strong>:指定请求的实际地址，指定的地址可以是URI Template 模式</p>
+<p><strong>method</strong>:指定请求的method类型， GET、POST、PUT、DELETE等</p>
+<p><strong>consumes</strong>:指定处理请求的提交内容类型（Content-Type），如application/json,text/html;</p>
+<p><strong>produces</strong>:指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回</p>
+<p><strong>@RequestParam</strong>：用在方法的参数前面。<br>@RequestParam<br>String a =request.getParameter(“a”)。</p>
+<p><strong>@PathVariable</strong>:路径变量。如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RequestMapping(“user/get/mac/&#123;macAddress&#125;”)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getByMacAddress</span><span class="params">(@PathVariable String macAddress)</span></span>&#123;</span><br><span class="line">    <span class="comment">//do something;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参数与大括号里的名字一样要相同。</p>
+<h1 id="四、全局异常处理"><a href="#四、全局异常处理" class="headerlink" title="四、全局异常处理"></a>四、全局异常处理</h1><p><strong>@ControllerAdvice</strong>：包含@Component。可以被扫描到。统一处理异常。</p>
+<p><strong>@ExceptionHandler</strong>（Exception.class）：用在方法上面表示遇到这个异常就执行以下方法。</p>
 
       
 
@@ -308,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/29/Spring-Boot%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +351,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/29/Spring-Boot%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring Boot注解大全
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/24/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何快速的学习一门语言</div>
+    <a href="/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java I/O详解</div>
       <i class="icon-circle-right"></i>
     </a>
   
