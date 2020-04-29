@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-29T08:14:55.036Z</updated>
+  <updated>2020-04-29T08:30:07.430Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax异步请求</title>
+    <link href="http://yoursite.com/2020/04/29/Ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/"/>
+    <id>http://yoursite.com/2020/04/29/Ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/</id>
+    <published>2020-04-29T08:21:23.000Z</published>
+    <updated>2020-04-29T08:30:07.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ajax  </p><p>ajax:异步js和xml  异步刷新：如果网页中某一个地方需要修改，异步刷新可以使：只刷新该需要修改的地方</p><h5 id="一、使用原生JS方式实现ajax"><a href="#一、使用原生JS方式实现ajax" class="headerlink" title="一、使用原生JS方式实现ajax"></a>一、使用原生JS方式实现ajax</h5><pre><code>JS: XMLHttpRequest对象       </code></pre><p>​        XMLHttpRequest对象的方法：       </p><p>​        open(</p><p>​                方法名(提交方式get\post)，</p><p>​                服务器地址，true):与服务端建立连接·      </p><p>​                 send() :          </p><p>​                 get:send(null)           </p><p>​                post:send(参数值)       </p><p>​                setRequestHeader(header,value):           </p><p>​                get:不需要设置此方法          </p><p>​                post：需要设置                   </p><p>a.如果请求元素中包含了文件上传：setRequestHeader(“Content-Type”,”multiparty-form-data”)                   </p><p>b.不包含文件上传 ： setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)             XMLHttpRequest对象的属性：readystate:请求状态   只有状态为4，才把响应执行完毕           </p><p> status:响应状态       只有200代表响应正常    </p><p> onreadystatechange:回调函数          </p><p> responseText：响应格式为String           </p><p> responseXML：响应为XML</p><h4 id="jquery-推荐"><a href="#jquery-推荐" class="headerlink" title="jquery:推荐"></a>jquery:推荐</h4><p>首先要使用ajax强推的就是利用jquery方式来实现，下面我为大家提供了几种方式</p><p>1.用ajax方法实现</p><p>$.ajax({     </p><p>​                utl:服务器地址，     </p><p>​                请求方式：get\post，     </p><p>​                data:请求数据，     </p><p>​                success:function(result,testStatus){</p><p>​                 },     error:function(xhr,erroeMessage,e){<br>​                         }   </p><p>​        }) </p><p>2.用get方法实现，比较简便，且只能处理get请求</p><p>​     $.get(     </p><p>​            服务器地址，     </p><p>​            请求数据，    </p><p>​           function(result){</p><p>​          }         </p><p>​        预期返回值类型（string\xml）   </p><p>​    )</p><p>3.利用post方法，同上 且只能处理post请求</p><p>$.post(     </p><p>​    服务器地址，     </p><p>​    请求数据，     </p><p>​    function(result){<br>​     }     </p><p>​    预期返回值类型（string\xml） </p><p>  )</p><p>4.利用load方式来实现，通过名字我们可以看出来这种方式是通过页面加载完毕后才可以执行，并且它需要依靠一个选择器，这个选择器可以是一个事件。</p><p>  $(“选择器”).load(    </p><p>​         服务器地址，      </p><p>​        请求数据，     </p><p>​         function(result){<br>​      }      预期返回值类型（string\xml）  </p><p> ) </p><p>​     load:将服务端的返回值 直接加载到$(“#xx”)所选择的元素中</p><p>5.这种方式只能处理JSON数据</p><p>  $.getJSON(       </p><p>​        服务器地址,       </p><p>​        JSON格式的请求数据，       </p><p>​        function(){}   </p><p>)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ajax  &lt;/p&gt;
+&lt;p&gt;ajax:异步js和xml  异步刷新：如果网页中某一个地方需要修改，异步刷新可以使：只刷新该需要修改的地方&lt;/p&gt;
+&lt;h5 id=&quot;一、使用原生JS方式实现ajax&quot;&gt;&lt;a href=&quot;#一、使用原生JS方式实现ajax&quot; class=&quot;hea
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Spring Boot注解大全</title>
