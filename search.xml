@@ -1,80 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java I/O详解</title>
-    <url>/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h3 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流?"></a>什么是IO流?</h3><p>IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。</p>
-<p>文件可认为是相关记录或放在一起的数据的集合 </p>
-<h4 id="file类的常用方法"><a href="#file类的常用方法" class="headerlink" title="file类的常用方法"></a>file类的常用方法</h4><p>​        方法名称          说   明 </p>
-<p>​        boolean exists( )       判断文件或目录是否存在</p>
-<p>​        boolean isFile( )       判断是否是文件</p>
-<p>​        boolean isDirectory( )    判断是否是目录 </p>
-<p>​        String getPath( )       返回此对象表示的文件的相对路径名 </p>
-<p>​        String getAbsolutePath( )   返回此对象表示的文件的绝对路径名</p>
-<p>​        String getName( )      返回此对象表示的文件或目录的名称</p>
-<p>​        boolean delete( )      删除此对象指定的文件或目录 </p>
-<p>​        boolean createNewFile( )   创建名称的空文件，不创建文件夹</p>
-<p>​        long  length()       返回文件的长度，单位为字节, 如果文 件不存在，则返回 0L </p>
-<h3 id="Java的流"><a href="#Java的流" class="headerlink" title="Java的流"></a>Java的流</h3><p>​        流是指一连串流动的字符，是以先进先出的方式发送和接受数据的通道</p>
-<p>​        输入流：InputStream 只能从中读取数据，而不能向其中写入数据</p>
-<p>​        输出流：OutputStream只能向其中写入数据，而不能向其中读取数据</p>
-<p>​        按照流向区分：</p>
-<p>​            输入流：InputStream和Reader作为基类</p>
-<p>​            输出流：OutputStream和Writer作为基类</p>
-<p>​        按照处理数据单元划分：</p>
-<p>​            字节流：字节输入流InputStream基类</p>
-<p>​            字节输出流OutputStream基类</p>
-<p>​        字符流：字符输入流Reader基类</p>
-<p>​        字符输出流Writer基类</p>
-<h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>文本文件的读写：</p>
-<pre><code>用FileInputStream和FileOutputStream读写文本 文件 </code></pre><p>​            用BufferedReader和BufferedWriter读写文本文 件</p>
-<p>二进制文件的读写：</p>
-<p>​            使用DataInputStream和DataOutputStream读写 二进制文件</p>
-<h3 id="InputStream常用方法"><a href="#InputStream常用方法" class="headerlink" title="InputStream常用方法"></a>InputStream常用方法</h3><p>​         int read( )   int read(byte[] b)  int read(byte[] b,int off,int len) uvoid close( )   int available()  子类    FileInputStream</p>
-<h3 id="常用的构造方法"><a href="#常用的构造方法" class="headerlink" title="常用的构造方法"></a>常用的构造方法</h3><pre><code>FileInputStream(File file)    FileInputStream(String name)</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​        前两种构造方法在向文件写数据时将覆盖文件中原有的内容 </p>
-<p>2、创建FileOutputStream实例时，如果相应的文件并不存在， 则会自动创建一个空的文件</p>
-<h3 id="BufferedReader类特有的方法"><a href="#BufferedReader类特有的方法" class="headerlink" title="BufferedReader类特有的方法"></a>BufferedReader类特有的方法</h3><p>​        BufferedReader类是Reader类的子类 BufferedReader类带有缓冲区 按行读取内容的readLine()方法</p>
-<p><img src="img/io.png" alt="io"></p>
-<p>这个是IO流关系图，可以方便大家更好的理解IO流</p>
-<h3 id="读取二进制文件"><a href="#读取二进制文件" class="headerlink" title="读取二进制文件"></a>读取二进制文件</h3><p>​        DataInputStream类</p>
-<p>​         FileInputStream的子类 </p>
-<p>​        与FileInputStream类结合使用读取二进制文件 </p>
-<p>​         DataOutputStream类</p>
-<p>​         FileOutputStream的子类 </p>
-<p>​        与FileOutputStream类结合使用写二进制文件</p>
-<h3 id="使用文件流的步骤"><a href="#使用文件流的步骤" class="headerlink" title="使用文件流的步骤"></a>使用文件流的步骤</h3><p>引入相关的类</p>
-<p>创建输入流/l输出流对象</p>
-<p> 读取/写入文本文件的数据</p>
-<p>关闭相关的流对象</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/04/23/hello-world/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>如何快速的学习一门语言</title>
-    <url>/2020/04/24/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<p>​        首先,在我们学习新东西的时候我们会产生好奇的心态，我们会问这个东西是干什么的? 我学这个东西有什么用？这些都是我们常见的一些问题，这里我们就用Java来举例，那么必须要知道的是我们为什么要学习Java，学习Java能给我带来什么好处，在学习一门新的语言之前，一定要了解自己为什么要学习它，了解清楚Java是干什么的，当你真正了解一门语言，你就会有清晰的目标。</p>
-<h3 id="我该如何学习"><a href="#我该如何学习" class="headerlink" title="我该如何学习?"></a>我该如何学习?</h3><p>​     首先，这些学习方式以及经验都是我个人总结出来的，没有任何抄袭现象，很多东西都是有一些大众化，我尽量帮助各位小伙伴解疑答惑。</p>
-<p>​        论学习，唯独一个字，从小学到大学一直没有变的一个字:”练”,只要练不死，就往死里练，其次就是要学会理解，在适当的时间专门钻研一个东西，当然是要钻研重要的东西。大家可能有的是自学，有的是报的培训班，但是这些都没有关系，我们都是在学习，不论在哪里。</p>
-<h5 id="1-学习中遇到问题怎么办"><a href="#1-学习中遇到问题怎么办" class="headerlink" title="1.学习中遇到问题怎么办?"></a>1.学习中遇到问题怎么办?</h5><p>​    遇到问题不要慌，都是很正常的现象，在这里我可以跟大家分享一下我的经历，学过的小伙伴们也都知道，我们会碰到各式各样的bug，我自己也是一样，记得有一次，遇到了一个比较罕见的bug我就去网上查阅各种资料看各种源码，最后发现也就是少了一个标点符号，哈哈。其实这些并不是丢人，能够发现自己的问题并解决就是能力。就像我说的，遇到问题，可以先去百度或者更Google上搜索一下，如果搜索不出来，可以尝试的问一些大牛们，在培训班的小伙伴可以问一些老师，当然，初学者遇到问题呢也可以直接来找我，我随时欢迎你们，记住，在学习中遇到问题是很正常的，并且你也一定要希望遇到问题，解决了你就能提升。</p>
-<h5 id="2-不知道学什么怎么办"><a href="#2-不知道学什么怎么办" class="headerlink" title="2.不知道学什么怎么办?"></a>2.不知道学什么怎么办?</h5><p>​        在互联网行业，技术发展随之即快，所以我们一定要不停的学习，什么技术火，学习什么技术，记住一句话，我们为什么要学习它？因为用的人多，所以我们要学习。无论你是在学习中还是在工作中，千万不要停止学习的脚步，你可以关注一些公众号以及一些关于IT的网站，这里面都会去详细讲解新技术发展如何，我们又改学习什么，当然把基础的学会，其他入门就很容易。具体还要学什么，就看公司要求了。我这里后续也会推出，学习路线以及群里的学习资料，对了,这里打个广告哈哈，这个是我自行创的群目前还没什么人，当然我也是希望你们能够加入和我一起进步:1081931475</p>
-<h5 id="3-行业发展这么快-我赶不上怎么办"><a href="#3-行业发展这么快-我赶不上怎么办" class="headerlink" title="3.行业发展这么快?我赶不上怎么办?"></a>3.行业发展这么快?我赶不上怎么办?</h5><p>​        这个问题其实没有任何的确定回复性，因为现实就是如此，适者生存，如果你没有足够的能力在社会上立足，那么就会有人取代你。所以要想发展，必须做出努力。学习是我们最好的出路，无论到哪里，学习永远不会使人退步。</p>
-<p>下面我为大家展现出第一个Java程序，当然第一个Java程序是非常简单的</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJava</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>相信大佬们闭着眼睛都能写出来，但是初学者们，你们是否感觉到难了呢，因为你们没有接触过，当你们接触的时候你们就会豁然开朗，发现程序竟然是这么的好玩，很多事情开头都是一头污水 ，所以不要看着这么多英语，就放弃学习了，你自己选择的路一定要走下去。</p>
-<h5 id="4-数学和英语不好能学会吗"><a href="#4-数学和英语不好能学会吗" class="headerlink" title="4.数学和英语不好能学会吗?"></a>4.数学和英语不好能学会吗?</h5><p>​        相信这个问题在很多初学者面前一直是一个大问题，我们没有好的数学和英语水平，但我可以告诉你们，我的数学和英语也是一塌糊度，但尽管没有这些做基垫，我照样可以学的很好，可能数学好的小伙伴学习编程可能会好理解一些，但这些相差并不大，只要我们肯努力，学习起来是不难的，我也可以告诉你们，英语不好学习编程也没有问题，因为学习编程还会使你的逻辑思维和英语大幅提升。</p>
-<p>死亡鸡汤 总结一句话：数学只要会+ - * / % 就可以  英语的话不会也没事，只要了解就行了</p>
-<p><strong>还有最重要的一点:学习编程后，一定要魔鬼训练自己的打字速度，这个非常重要，还要练习盲打。</strong></p>
-<h5 id="5-学过之后忘了怎么办？"><a href="#5-学过之后忘了怎么办？" class="headerlink" title="5.学过之后忘了怎么办？"></a>5.学过之后忘了怎么办？</h5><p>​    这里我提出三个解决办法:</p>
-<p>​            1.学习的同时自己要记笔记，写代码注释，并要有自己的总结，没事拿出来看看。也要归纳一个文档。</p>
-<p>​            2.反复的复习，忘记哪个技术，回过头再看一遍。</p>
-<p>​            3.写技术博客，就像我这样，把一些技术写到博客里，这样就算你电脑的文件没了，这个博客也不会没。</p>
-<p>好了这期就到这里，可以看出来，这是我第一篇文章，我希望大家有什么意见尽管提出来，你们的意见是我提升的目标，谢谢大家！！！</p>
-<p>​        </p>
+    <title>Ajax异步请求</title>
+    <url>/2020/04/29/Ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/</url>
+    <content><![CDATA[<p>Ajax  </p>
+<p>ajax:异步js和xml  异步刷新：如果网页中某一个地方需要修改，异步刷新可以使：只刷新该需要修改的地方</p>
+<h5 id="一、使用原生JS方式实现ajax"><a href="#一、使用原生JS方式实现ajax" class="headerlink" title="一、使用原生JS方式实现ajax"></a>一、使用原生JS方式实现ajax</h5><pre><code>JS: XMLHttpRequest对象       </code></pre><p>​        XMLHttpRequest对象的方法：       </p>
+<p>​        open(</p>
+<p>​                方法名(提交方式get\post)，</p>
+<p>​                服务器地址，true):与服务端建立连接·      </p>
+<p>​                 send() :          </p>
+<p>​                 get:send(null)           </p>
+<p>​                post:send(参数值)       </p>
+<p>​                setRequestHeader(header,value):           </p>
+<p>​                get:不需要设置此方法          </p>
+<p>​                post：需要设置                   </p>
+<p>a.如果请求元素中包含了文件上传：setRequestHeader(“Content-Type”,”multiparty-form-data”)                   </p>
+<p>b.不包含文件上传 ： setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)             XMLHttpRequest对象的属性：readystate:请求状态   只有状态为4，才把响应执行完毕           </p>
+<p> status:响应状态       只有200代表响应正常    </p>
+<p> onreadystatechange:回调函数          </p>
+<p> responseText：响应格式为String           </p>
+<p> responseXML：响应为XML</p>
+<h4 id="jquery-推荐"><a href="#jquery-推荐" class="headerlink" title="jquery:推荐"></a>jquery:推荐</h4><p>首先要使用ajax强推的就是利用jquery方式来实现，下面我为大家提供了几种方式</p>
+<p>1.用ajax方法实现</p>
+<p>$.ajax({     </p>
+<p>​                utl:服务器地址，     </p>
+<p>​                请求方式：get\post，     </p>
+<p>​                data:请求数据，     </p>
+<p>​                success:function(result,testStatus){</p>
+<p>​                 },     error:function(xhr,erroeMessage,e){<br>​                         }   </p>
+<p>​        }) </p>
+<p>2.用get方法实现，比较简便，且只能处理get请求</p>
+<p>​     $.get(     </p>
+<p>​            服务器地址，     </p>
+<p>​            请求数据，    </p>
+<p>​           function(result){</p>
+<p>​          }         </p>
+<p>​        预期返回值类型（string\xml）   </p>
+<p>​    )</p>
+<p>3.利用post方法，同上 且只能处理post请求</p>
+<p>$.post(     </p>
+<p>​    服务器地址，     </p>
+<p>​    请求数据，     </p>
+<p>​    function(result){<br>​     }     </p>
+<p>​    预期返回值类型（string\xml） </p>
+<p>  )</p>
+<p>4.利用load方式来实现，通过名字我们可以看出来这种方式是通过页面加载完毕后才可以执行，并且它需要依靠一个选择器，这个选择器可以是一个事件。</p>
+<p>  $(“选择器”).load(    </p>
+<p>​         服务器地址，      </p>
+<p>​        请求数据，     </p>
+<p>​         function(result){<br>​      }      预期返回值类型（string\xml）  </p>
+<p> ) </p>
+<p>​     load:将服务端的返回值 直接加载到$(“#xx”)所选择的元素中</p>
+<p>5.这种方式只能处理JSON数据</p>
+<p>  $.getJSON(       </p>
+<p>​        服务器地址,       </p>
+<p>​        JSON格式的请求数据，       </p>
+<p>​        function(){}   </p>
+<p>)</p>
 ]]></content>
   </entry>
   <entry>
@@ -157,208 +140,81 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Ajax异步请求</title>
-    <url>/2020/04/29/Ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/</url>
-    <content><![CDATA[<p>Ajax  </p>
-<p>ajax:异步js和xml  异步刷新：如果网页中某一个地方需要修改，异步刷新可以使：只刷新该需要修改的地方</p>
-<h5 id="一、使用原生JS方式实现ajax"><a href="#一、使用原生JS方式实现ajax" class="headerlink" title="一、使用原生JS方式实现ajax"></a>一、使用原生JS方式实现ajax</h5><pre><code>JS: XMLHttpRequest对象       </code></pre><p>​        XMLHttpRequest对象的方法：       </p>
-<p>​        open(</p>
-<p>​                方法名(提交方式get\post)，</p>
-<p>​                服务器地址，true):与服务端建立连接·      </p>
-<p>​                 send() :          </p>
-<p>​                 get:send(null)           </p>
-<p>​                post:send(参数值)       </p>
-<p>​                setRequestHeader(header,value):           </p>
-<p>​                get:不需要设置此方法          </p>
-<p>​                post：需要设置                   </p>
-<p>a.如果请求元素中包含了文件上传：setRequestHeader(“Content-Type”,”multiparty-form-data”)                   </p>
-<p>b.不包含文件上传 ： setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)             XMLHttpRequest对象的属性：readystate:请求状态   只有状态为4，才把响应执行完毕           </p>
-<p> status:响应状态       只有200代表响应正常    </p>
-<p> onreadystatechange:回调函数          </p>
-<p> responseText：响应格式为String           </p>
-<p> responseXML：响应为XML</p>
-<h4 id="jquery-推荐"><a href="#jquery-推荐" class="headerlink" title="jquery:推荐"></a>jquery:推荐</h4><p>首先要使用ajax强推的就是利用jquery方式来实现，下面我为大家提供了几种方式</p>
-<p>1.用ajax方法实现</p>
-<p>$.ajax({     </p>
-<p>​                utl:服务器地址，     </p>
-<p>​                请求方式：get\post，     </p>
-<p>​                data:请求数据，     </p>
-<p>​                success:function(result,testStatus){</p>
-<p>​                 },     error:function(xhr,erroeMessage,e){<br>​                         }   </p>
-<p>​        }) </p>
-<p>2.用get方法实现，比较简便，且只能处理get请求</p>
-<p>​     $.get(     </p>
-<p>​            服务器地址，     </p>
-<p>​            请求数据，    </p>
-<p>​           function(result){</p>
-<p>​          }         </p>
-<p>​        预期返回值类型（string\xml）   </p>
-<p>​    )</p>
-<p>3.利用post方法，同上 且只能处理post请求</p>
-<p>$.post(     </p>
-<p>​    服务器地址，     </p>
-<p>​    请求数据，     </p>
-<p>​    function(result){<br>​     }     </p>
-<p>​    预期返回值类型（string\xml） </p>
-<p>  )</p>
-<p>4.利用load方式来实现，通过名字我们可以看出来这种方式是通过页面加载完毕后才可以执行，并且它需要依靠一个选择器，这个选择器可以是一个事件。</p>
-<p>  $(“选择器”).load(    </p>
-<p>​         服务器地址，      </p>
-<p>​        请求数据，     </p>
-<p>​         function(result){<br>​      }      预期返回值类型（string\xml）  </p>
-<p> ) </p>
-<p>​     load:将服务端的返回值 直接加载到$(“#xx”)所选择的元素中</p>
-<p>5.这种方式只能处理JSON数据</p>
-<p>  $.getJSON(       </p>
-<p>​        服务器地址,       </p>
-<p>​        JSON格式的请求数据，       </p>
-<p>​        function(){}   </p>
-<p>)</p>
+    <title>Java I/O详解</title>
+    <url>/2020/04/26/Java-I-O%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h3 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流?"></a>什么是IO流?</h3><p>IO流正是所谓的文件输入输出流，这是Java提供给我们开发者遍历的操作文件的技术。</p>
+<p>文件可认为是相关记录或放在一起的数据的集合 </p>
+<h4 id="file类的常用方法"><a href="#file类的常用方法" class="headerlink" title="file类的常用方法"></a>file类的常用方法</h4><p>​        方法名称          说   明 </p>
+<p>​        boolean exists( )       判断文件或目录是否存在</p>
+<p>​        boolean isFile( )       判断是否是文件</p>
+<p>​        boolean isDirectory( )    判断是否是目录 </p>
+<p>​        String getPath( )       返回此对象表示的文件的相对路径名 </p>
+<p>​        String getAbsolutePath( )   返回此对象表示的文件的绝对路径名</p>
+<p>​        String getName( )      返回此对象表示的文件或目录的名称</p>
+<p>​        boolean delete( )      删除此对象指定的文件或目录 </p>
+<p>​        boolean createNewFile( )   创建名称的空文件，不创建文件夹</p>
+<p>​        long  length()       返回文件的长度，单位为字节, 如果文 件不存在，则返回 0L </p>
+<h3 id="Java的流"><a href="#Java的流" class="headerlink" title="Java的流"></a>Java的流</h3><p>​        流是指一连串流动的字符，是以先进先出的方式发送和接受数据的通道</p>
+<p>​        输入流：InputStream 只能从中读取数据，而不能向其中写入数据</p>
+<p>​        输出流：OutputStream只能向其中写入数据，而不能向其中读取数据</p>
+<p>​        按照流向区分：</p>
+<p>​            输入流：InputStream和Reader作为基类</p>
+<p>​            输出流：OutputStream和Writer作为基类</p>
+<p>​        按照处理数据单元划分：</p>
+<p>​            字节流：字节输入流InputStream基类</p>
+<p>​            字节输出流OutputStream基类</p>
+<p>​        字符流：字符输入流Reader基类</p>
+<p>​        字符输出流Writer基类</p>
+<h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>文本文件的读写：</p>
+<pre><code>用FileInputStream和FileOutputStream读写文本 文件 </code></pre><p>​            用BufferedReader和BufferedWriter读写文本文 件</p>
+<p>二进制文件的读写：</p>
+<p>​            使用DataInputStream和DataOutputStream读写 二进制文件</p>
+<h3 id="InputStream常用方法"><a href="#InputStream常用方法" class="headerlink" title="InputStream常用方法"></a>InputStream常用方法</h3><p>​         int read( )   int read(byte[] b)  int read(byte[] b,int off,int len) uvoid close( )   int available()  子类    FileInputStream</p>
+<h3 id="常用的构造方法"><a href="#常用的构造方法" class="headerlink" title="常用的构造方法"></a>常用的构造方法</h3><pre><code>FileInputStream(File file)    FileInputStream(String name)</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>​        前两种构造方法在向文件写数据时将覆盖文件中原有的内容 </p>
+<p>2、创建FileOutputStream实例时，如果相应的文件并不存在， 则会自动创建一个空的文件</p>
+<h3 id="BufferedReader类特有的方法"><a href="#BufferedReader类特有的方法" class="headerlink" title="BufferedReader类特有的方法"></a>BufferedReader类特有的方法</h3><p>​        BufferedReader类是Reader类的子类 BufferedReader类带有缓冲区 按行读取内容的readLine()方法</p>
+<p><img src="img/io.png" alt="io"></p>
+<p>这个是IO流关系图，可以方便大家更好的理解IO流</p>
+<h3 id="读取二进制文件"><a href="#读取二进制文件" class="headerlink" title="读取二进制文件"></a>读取二进制文件</h3><p>​        DataInputStream类</p>
+<p>​         FileInputStream的子类 </p>
+<p>​        与FileInputStream类结合使用读取二进制文件 </p>
+<p>​         DataOutputStream类</p>
+<p>​         FileOutputStream的子类 </p>
+<p>​        与FileOutputStream类结合使用写二进制文件</p>
+<h3 id="使用文件流的步骤"><a href="#使用文件流的步骤" class="headerlink" title="使用文件流的步骤"></a>使用文件流的步骤</h3><p>引入相关的类</p>
+<p>创建输入流/l输出流对象</p>
+<p> 读取/写入文本文件的数据</p>
+<p>关闭相关的流对象</p>
 ]]></content>
   </entry>
   <entry>
-    <title>常用的正则表达式</title>
-    <url>/2020/04/29/%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<p>特殊需求表达式：</p>
-<ol>
-<li><p>Email地址：^\w+([-+.]\w+)<em>@\w+([-.]\w+)*.\w+([-.]\w+)</em>$</p>
-</li>
-<li><p>域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</p>
-</li>
-<li><p>InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]*)?$</p>
-</li>
-<li><p>手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p>
-</li>
-<li><p>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：^((\d{3,4}-)|\d{3.4}-)?\d{7,8}$</p>
-</li>
-<li><p>国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7}</p>
-</li>
-<li><p>身份证号(15位、18位数字)：^\d{15}|\d{18}$</p>
-</li>
-<li><p>短身份证号码(数字、字母x结尾)：^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</p>
-</li>
-<li><p>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$</p>
-</li>
-<li><p>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$</p>
-</li>
-<li><p>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.<em>\d)(?=.</em>[a-z])(?=.*[A-Z]).{8,10}$</p>
-</li>
-<li><p>日期格式：^\d{4}-\d{1,2}-\d{1,2}</p>
-</li>
-<li><p>一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$</p>
-</li>
-<li><p>一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$</p>
-</li>
-<li><p>钱的输入格式：</p>
-</li>
-</ol>
-<p>16.有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：^[1-9][0-9]*$</p>
-<ol start="17">
-<li><p>这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$</p>
-</li>
-<li><p>一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$</p>
-</li>
-<li><p>这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$</p>
-</li>
-<li><p>必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：^[0-9]+(.[0-9]{2})?$</p>
-</li>
-<li><p>这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$</p>
-</li>
-<li><p>这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</p>
-</li>
-</ol>
-<p>23 .1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</p>
-<ol start="24">
-<li><p>备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p>
-</li>
-<li><p>xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\.[x|X][m|M][l|L]$</p>
-</li>
-<li><p>中文字符的正则表达式：[\u4e00-\u9fa5]</p>
-</li>
-<li><p>双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p>
-</li>
-<li><p>空白行的正则表达式：\n\s*\r (可以用来删除空白行)</p>
-</li>
-<li><p>HTML标记的正则表达式：&lt;(\S<em>?)[^&gt;]</em>&gt;.<em>?&lt;/\1&gt;|&lt;.</em>? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p>
-</li>
-<li><p>首尾空白字符的正则表达式：^\s<em>|\s</em>$或(^\s<em>)|(\s</em>$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p>
-</li>
-<li><p>腾讯QQ号：[1-9][0-9]{4,} (腾讯QQ号从10000开始)</p>
-</li>
-<li><p>中国邮政编码：[1-9]\d{5}(?!\d) (中国邮政编码为6位数字)</p>
-</li>
-<li><p>IP地址：\d+.\d+.\d+.\d+ (提取IP地址时有用)</p>
-</li>
-<li><p>IP地址：((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</p>
-</li>
-</ol>
-<p>二、校验字符的表达式</p>
-<ol>
-<li><p>汉字：^[\u4e00-\u9fa5]{0,}$</p>
-</li>
-<li><p>英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</p>
-</li>
-<li><p>长度为3-20的所有字符：^.{3,20}$</p>
-</li>
-<li><p>由26个英文字母组成的字符串：^[A-Za-z]+$</p>
-</li>
-<li><p>由26个大写英文字母组成的字符串：^[A-Z]+$</p>
-</li>
-<li><p>由26个小写英文字母组成的字符串：^[a-z]+$</p>
-</li>
-<li><p>由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</p>
-</li>
-<li><p>由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$</p>
-</li>
-<li><p>中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</p>
-</li>
-<li><p>中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</p>
-</li>
-<li><p>可以输入含有^%&amp;’,;=?$&quot;等字符：[^%&amp;’,;=?$\x22]+ 12 禁止输入含有<del>的字符：[^</del>\x22]+</p>
-</li>
-</ol>
-<p>一、校验数字的表达式</p>
-<ol>
-<li><p>数字：^[0-9]*$</p>
-</li>
-<li><p>n位的数字：^\d{n}$</p>
-</li>
-<li><p>至少n位的数字：^\d{n,}$</p>
-</li>
-<li><p>m-n位的数字：^\d{m,n}$</p>
-</li>
-<li><p>零和非零开头的数字：^(0|[1-9][0-9]*)$</p>
-</li>
-<li><p>非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$</p>
-</li>
-<li><p>带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$</p>
-</li>
-<li><p>正数、负数、和小数：^(-|+)?\d+(.\d+)?$</p>
-</li>
-<li><p>有两位小数的正实数：^[0-9]+(.[0-9]{2})?$</p>
-</li>
-<li><p>有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$</p>
-</li>
-<li><p>非零的正整数：^[1-9]\d<em>$ 或 ^([1-9][0-9]</em>){1,3}$ 或 ^+?[1-9][0-9]*$</p>
-</li>
-<li><p>非零的负整数：^-[1-9][]0-9”<em>$ 或 ^-[1-9]\d</em>$</p>
-</li>
-<li><p>非负整数：^\d+$ 或 ^[1-9]\d*|0$</p>
-</li>
-<li><p>非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</p>
-</li>
-<li><p>非负浮点数：^\d+(.\d+)?$ 或 ^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0$</p>
-</li>
-<li><p>非正浮点数：^((-\d+(.\d+)?)|(0+(.0+)?))$ 或 ^(-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>))|0?.0+|0$</p>
-</li>
-<li><p>正浮点数：^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>$ 或 ^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]*.[0-9]+)|([0-9]</em>[1-9][0-9]*))$</p>
-</li>
-<li><p>负浮点数：^-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>)$ 或 ^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]*.[0-9]+)|([0-9]</em>[1-9][0-9]*)))$</p>
-</li>
-<li><p>浮点数：^(-?\d+)(.\d+)?$ 或 ^-?([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0)$</p>
-</li>
-</ol>
+    <title>如何快速的学习一门语言</title>
+    <url>/2020/04/24/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<p>​        首先,在我们学习新东西的时候我们会产生好奇的心态，我们会问这个东西是干什么的? 我学这个东西有什么用？这些都是我们常见的一些问题，这里我们就用Java来举例，那么必须要知道的是我们为什么要学习Java，学习Java能给我带来什么好处，在学习一门新的语言之前，一定要了解自己为什么要学习它，了解清楚Java是干什么的，当你真正了解一门语言，你就会有清晰的目标。</p>
+<h3 id="我该如何学习"><a href="#我该如何学习" class="headerlink" title="我该如何学习?"></a>我该如何学习?</h3><p>​     首先，这些学习方式以及经验都是我个人总结出来的，没有任何抄袭现象，很多东西都是有一些大众化，我尽量帮助各位小伙伴解疑答惑。</p>
+<p>​        论学习，唯独一个字，从小学到大学一直没有变的一个字:”练”,只要练不死，就往死里练，其次就是要学会理解，在适当的时间专门钻研一个东西，当然是要钻研重要的东西。大家可能有的是自学，有的是报的培训班，但是这些都没有关系，我们都是在学习，不论在哪里。</p>
+<h5 id="1-学习中遇到问题怎么办"><a href="#1-学习中遇到问题怎么办" class="headerlink" title="1.学习中遇到问题怎么办?"></a>1.学习中遇到问题怎么办?</h5><p>​    遇到问题不要慌，都是很正常的现象，在这里我可以跟大家分享一下我的经历，学过的小伙伴们也都知道，我们会碰到各式各样的bug，我自己也是一样，记得有一次，遇到了一个比较罕见的bug我就去网上查阅各种资料看各种源码，最后发现也就是少了一个标点符号，哈哈。其实这些并不是丢人，能够发现自己的问题并解决就是能力。就像我说的，遇到问题，可以先去百度或者更Google上搜索一下，如果搜索不出来，可以尝试的问一些大牛们，在培训班的小伙伴可以问一些老师，当然，初学者遇到问题呢也可以直接来找我，我随时欢迎你们，记住，在学习中遇到问题是很正常的，并且你也一定要希望遇到问题，解决了你就能提升。</p>
+<h5 id="2-不知道学什么怎么办"><a href="#2-不知道学什么怎么办" class="headerlink" title="2.不知道学什么怎么办?"></a>2.不知道学什么怎么办?</h5><p>​        在互联网行业，技术发展随之即快，所以我们一定要不停的学习，什么技术火，学习什么技术，记住一句话，我们为什么要学习它？因为用的人多，所以我们要学习。无论你是在学习中还是在工作中，千万不要停止学习的脚步，你可以关注一些公众号以及一些关于IT的网站，这里面都会去详细讲解新技术发展如何，我们又改学习什么，当然把基础的学会，其他入门就很容易。具体还要学什么，就看公司要求了。我这里后续也会推出，学习路线以及群里的学习资料，对了,这里打个广告哈哈，这个是我自行创的群目前还没什么人，当然我也是希望你们能够加入和我一起进步:1081931475</p>
+<h5 id="3-行业发展这么快-我赶不上怎么办"><a href="#3-行业发展这么快-我赶不上怎么办" class="headerlink" title="3.行业发展这么快?我赶不上怎么办?"></a>3.行业发展这么快?我赶不上怎么办?</h5><p>​        这个问题其实没有任何的确定回复性，因为现实就是如此，适者生存，如果你没有足够的能力在社会上立足，那么就会有人取代你。所以要想发展，必须做出努力。学习是我们最好的出路，无论到哪里，学习永远不会使人退步。</p>
+<p>下面我为大家展现出第一个Java程序，当然第一个Java程序是非常简单的</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJava</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相信大佬们闭着眼睛都能写出来，但是初学者们，你们是否感觉到难了呢，因为你们没有接触过，当你们接触的时候你们就会豁然开朗，发现程序竟然是这么的好玩，很多事情开头都是一头污水 ，所以不要看着这么多英语，就放弃学习了，你自己选择的路一定要走下去。</p>
+<h5 id="4-数学和英语不好能学会吗"><a href="#4-数学和英语不好能学会吗" class="headerlink" title="4.数学和英语不好能学会吗?"></a>4.数学和英语不好能学会吗?</h5><p>​        相信这个问题在很多初学者面前一直是一个大问题，我们没有好的数学和英语水平，但我可以告诉你们，我的数学和英语也是一塌糊度，但尽管没有这些做基垫，我照样可以学的很好，可能数学好的小伙伴学习编程可能会好理解一些，但这些相差并不大，只要我们肯努力，学习起来是不难的，我也可以告诉你们，英语不好学习编程也没有问题，因为学习编程还会使你的逻辑思维和英语大幅提升。</p>
+<p>死亡鸡汤 总结一句话：数学只要会+ - * / % 就可以  英语的话不会也没事，只要了解就行了</p>
+<p><strong>还有最重要的一点:学习编程后，一定要魔鬼训练自己的打字速度，这个非常重要，还要练习盲打。</strong></p>
+<h5 id="5-学过之后忘了怎么办？"><a href="#5-学过之后忘了怎么办？" class="headerlink" title="5.学过之后忘了怎么办？"></a>5.学过之后忘了怎么办？</h5><p>​    这里我提出三个解决办法:</p>
+<p>​            1.学习的同时自己要记笔记，写代码注释，并要有自己的总结，没事拿出来看看。也要归纳一个文档。</p>
+<p>​            2.反复的复习，忘记哪个技术，回过头再看一遍。</p>
+<p>​            3.写技术博客，就像我这样，把一些技术写到博客里，这样就算你电脑的文件没了，这个博客也不会没。</p>
+<p>好了这期就到这里，可以看出来，这是我第一篇文章，我希望大家有什么意见尽管提出来，你们的意见是我提升的目标，谢谢大家！！！</p>
+<p>​        </p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/23/hello-world/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>开发神器IDEA快捷键</title>
